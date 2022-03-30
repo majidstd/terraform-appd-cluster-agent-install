@@ -78,7 +78,7 @@ resource "helm_release" "metrics-server" {
   name = "metrics-server"
   namespace = "metrics"
   repository = "https://charts.bitnami.com/bitnami"
-  chart = "bitnami/metrics-server"
+  chart = "metrics-server"
 
   values = [
     file("${path.module}/metrics-server-values.yaml")
@@ -89,7 +89,7 @@ resource "helm_release" "metrics-server" {
 resource "helm_release" "cluster-agent" {
   name = "cluster-agent"
   namespace = "appdynamics"
-  repository = "https://github.com/CiscoDevNet/appdynamics-charts/tree/master/cluster-agent"
+  repository = "https://ciscodevnet.github.io/appdynamics-charts"
   chart = "cluster-agent"
 
   values = [
