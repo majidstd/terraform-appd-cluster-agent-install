@@ -85,7 +85,6 @@ resource "kubernetes_namespace" "metrics" {
 # ]
 #
 #}
-
 # Deploy the AppDynamics cluster agent using AppDynamic's helm chart
 resource "helm_release" "cluster-agent" {
   name = "cluster-agent"
