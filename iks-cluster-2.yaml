@@ -9,4 +9,4 @@ imageInfo:
 
   # Cluster agent config
 clusterAgent:
-  nsToMonitor: [default,iks,kube-node-lease,kube-public,kube-system,appdynamics]
+  nsToMonitor: [default,iks,kube-node-lease,kube-public,kube-system,appdynamics,mongodb-namespace]
