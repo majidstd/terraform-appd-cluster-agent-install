@@ -49,12 +49,12 @@ terraform {
 }
 
 provider "kubernetes" {
-  config_path = "IKS-Cluster01-kubeconfig" # NOTE: Change this value to your kubeconfig file
+  config_path = "da-compute-kubeconfig.yml" # NOTE: Change this value to your kubeconfig file
 }
 
 provider "helm" {
   kubernetes {
-    config_path = "IKS-Cluster01-kubeconfig"
+    config_path = "da-compute-kubeconfig.yml"
   }
 }
 
