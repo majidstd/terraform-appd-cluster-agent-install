@@ -89,7 +89,7 @@ resource "kubernetes_namespace" "metrics" {
 resource "helm_release" "cluster-agent" {
   name = "cluster-agent"
   namespace = "appdynamics"
-  repository = "https://github.com/CiscoDevNet/appdynamics-charts"
+  repository = "https://ciscodevnet.github.io/appdynamics-charts"
   chart = "cluster-agent"
 
   values = [
