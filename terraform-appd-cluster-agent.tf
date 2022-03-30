@@ -78,7 +78,7 @@ resource "helm_release" "metrics-server" {
   name = "metrics-server"
   namespace = "metrics"
   repository = "https://charts.bitnami.com/bitnami"
-  chart = "metrics-server"
+  chart = "bitnami/metrics-server"
 
   values = [
     file("${path.module}/metrics-server-values.yaml")
