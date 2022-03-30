@@ -84,9 +84,9 @@ command: ["metrics-server"]
 ##
 ## extraArgs:
 ##   kubelet-insecure-tls: true
-##   kubelet-preferred-address-types: InternalIP,ExternalIP,Hostname
+##   kubelet-preferred-address-types: InternalIP
 ##
-extraArgs: { kubelet-insecure-tls: true, kubelet-preferred-address-types: ExternalIP }
+extraArgs: { kubelet-insecure-tls: true, kubelet-preferred-address-types: InternalIP }
 
 ## Pod labels
 ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
