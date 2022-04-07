@@ -21,10 +21,10 @@ metadata:
   namespace: appdynamics
 spec:
   appName: "dev-cluster"
-  controllerUrl: "http://mycontroller.com:8080"
-  account: "my-account"
+  controllerUrl: "http://appd.bitpass.com:8090/"
+  account: "customer1"
   # docker image info
   image: "docker.io/appdynamics/cluster-agent:21.12.0"
   serviceAccountName: appdynamics-cluster-agent
-  nsToMonitor: [appdynamics,namespace1,namespace2]
+  nsToMonitor: [default,iks,kube-node-lease,kube-public,kube-system,appdynamics,mongodb-namespace]
   stdoutLogging: "true"
