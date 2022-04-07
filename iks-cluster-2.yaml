@@ -1,30 +1,14 @@
 # AppDynamics controller info
 # controllerInfo values are declared in terraform-appd-cluster-agent.tf
-# installClusterAgent: true
+installClusterAgent: true
 
-# imageInfo:
-  # agentImage: docker.io/appdynamics/cluster-agent
-  # agentTag: 22.1.0
-  # operatorImage: docker.io/appdynamics/cluster-agent-operator
-  # operatorTag: latest
-  # imagePullPolicy: Always 
+imageInfo:
+  agentImage: docker.io/appdynamics/cluster-agent
+  agentTag: 22.1.0
+  operatorImage: docker.io/appdynamics/cluster-agent-operator
+  operatorTag: latest
+  imagePullPolicy: Always 
 
-  Cluster agent config
-# clusterAgent:
-  # nsToMonitor: [default,iks,kube-node-lease,kube-public,kube-system,appdynamics,mongodb-namespace]
-  
-  
-apiVersion: cluster.appdynamics.com/v1alpha1
-kind: Clusteragent
-metadata:
-  name: k8s-cluster-agent
-  namespace: appdynamics
-spec:
-  appName: "dev-cluster"
-  controllerUrl: "http://appd.bitpass.com:8090/"
-  account: "customer1"
-  # docker image info
-  image: "docker.io/appdynamics/cluster-agent:21.12.0"
-  serviceAccountName: appdynamics-cluster-agent
+  # Cluster agent config
+clusterAgent:
   nsToMonitor: [default,iks,kube-node-lease,kube-public,kube-system,appdynamics,mongodb-namespace]
-  stdoutLogging: "true"
