@@ -1,6 +1,5 @@
-[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/CiscoDevNet/terraform-appd-cluster-agent-install)
 
-# Installing the Appdynamics cluster agent with Terraform
+# Installing the Appdynamics Kubernetes cluster agent with Terraform
 This repo contains shows how we can automation the installation of the AppDynamics `cluster-agent` on Kubernetes using Terraform.
 
 ## Requirements
@@ -12,6 +11,10 @@ You'll require the following to make this work in your environment:
 - Helm (we tested with version 3.3.4)
 - Create your own `secret.tfvars` file with values set for variables mentioned in the lab further down in this README.md file
 - Modify the variable `nsToMonitor` to ensure you are monitoring valid namespaces you would like to monitor with the Cluster Agent
+
+## Variables values required 
+
+Make sure the variable addressed in a terraform var files
 
 ## Credential values required in `secret.tfvar`
 
@@ -35,14 +38,18 @@ Terraform keeps sensitive values in a file named `secret.tfvar`and, because the 
 ## Example `secret.tfvar` file
 ```
 # AppDynamics controller credentials
-controller_url       = "https://example.saas.appdynamics.com:443"
-controller_account   = "acme"
-controller_username  = "rockstar"
-controller_password  = "myC00lpas$$W0rd"
-controller_accessKey = "v12345b234"
+controller_url       = "https://bit.saas.appdynamics.com:443"
+controller_account   = "saas01"
+controller_username  = "majid"
+controller_password  = "mypassword"
+controller_accessKey = "v11234567"
 ```
 
-## Creating and Applying the Terraform Plan
+## Creating and Applying the Terraform Plan in command line
+
+In this deployment, we used Terraform Business Cloud
+
+
 
 Here are the steps needed to run Terraform along with examples of each:
 
@@ -62,26 +69,15 @@ Here are the steps needed to run Terraform along with examples of each:
 
 When you successfully apply the Terraform plan, you will see information about your Kubernetes clusters reported to the AppDynamics Controller by the Kubernetes Agent. To see the information, log into your AppDynamics Controller and navigate to the Servers Tab and clicking Clusters on the left-most navigation panel.
 
-![Select AppDynamics Cluster](images/cluster-selection.png)
+## BayInfotech Repositories
 
-Then, select the your Kubernetes cluster followed by Details. This provides visibility into the metrics collected by your cluster and the namespaces defined in the variable named `nsToMonitor` in the `iks-cluster-2.yaml` file.
+Please visit our repositories for more detail and other projects in automation and programability:
 
-![Kubernetes cluster metrics](images/cluster-info.png)
+[https://github.com/bay-infotech](https://github.com/bay-infotech)
 
-## Related Repos
 
-Now that you are collecting metrics for your Kubernetes cluster used for the infrastructure hosting applications , check out how to integrate agents into applications with a hands-on sample.
+## BayInfotech website
+We are working hard to bring more automation and programmability into community. Please contact us for more detail projects and solutions
 
-[Cloud Native Sample Bookinfo App Observability](https://developer.cisco.com/codeexchange/github/repo/CiscoDevNet/bookinfo-cloudnative-sample)
+[https://bay-infotech.com](https://bay-infotech.com)
 
-You can also add monitoring of the host itself (the machines hosting Kubernetes in this case) by installing the AppDynamics machine Agent. Check out the Automation Exchange use case to learn more:
-
-[Automated deployment of virtual machines and AppDynamics Machine Agent](https://developer.cisco.com/network-automation/detail/0eb959e6-bf39-11eb-81e3-1e23f581908f/)
-
-## Related Sandbox
-
-[Cisco AppDynamics sandbox](https://devnetsandbox.cisco.com/RM/Diagram/Index/9e056219-ab84-4741-9485-de3d3446caf2?diagramType=Topology)
-
-## Links to DevNet Learning Labs
-
-[AppDynamics Fundamentals](https://developer.cisco.com/learning/modules/appdynamics-fundamentals)
